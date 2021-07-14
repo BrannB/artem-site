@@ -1,15 +1,8 @@
 <?php
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
 
-    require_once '../framework/config/autoloader.php';
-    require_once '../framework/config/routes.php';
+use app\core\Router;
 
-    use framework\router\Router;
-    use framework\sessions\Session;
+require_once '../app/core/Bootstrap.php';
 
-    $session = new Session();
-    $session->start();
-
-    $router = new Router();
-    $router->matchRoute();
+$router = new Router();
+$router->matchRoute();

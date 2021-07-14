@@ -2,16 +2,23 @@
 
 namespace app\controllers;
 
-require_once "../framework/templeater/Templeater.php";
-use framework\templeater\Templeater;
+use app\core\Session;
+use app\core\View;
 
 class MainController
 {
-    public function Index()
+    private Session $session;
+    private View $view;
+
+    public function __construct()
     {
-        $templeater = new Templeater();
-        $template = 'mainTpl';
-        $layout = 'main';
-        $templeater->renderContent($template, $layout);
+        $this->session = Session::getInstance();
+        $this->view = new View();
+    }
+
+    public function main()
+    {
+        $this->view->renderContent('main', 'main');
     }
 }
+
