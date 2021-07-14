@@ -18,6 +18,9 @@ class RestaurantController
 
     public function list()
     {
-        $this->view->renderContent('restaurant', 'list');
+        $restaurants_list = require_once("../app/core/dbList.php");
+        $this->view->renderContent('restaurant', 'list', [
+            'restaurants' => $restaurants_list
+        ]);
     }
 }
