@@ -7,5 +7,9 @@ return [
     '^main$' => [
         'controller' => 'main',
         "action" => "main"
-    ]
+    ],
+    '^/restaurants$' => [
+        'controller' => 'restaurant',
+        "action" => "list"
+    ],
 ];
