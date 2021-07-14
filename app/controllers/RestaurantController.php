@@ -23,4 +23,19 @@ class RestaurantController
             'restaurants' => $restaurants_list
         ]);
     }
+
+    public function meatFish()
+    {
+        $this->view->renderContent('restaurant', 'meat_fish');
+    }
+
+    public function seafood()
+    {
+        $this->view->renderContent('restaurant', 'seafood');
+    }
+
+    public function foodDrink()
+    {
+        $this->view->renderContent('restaurant', 'food_drink');
+    }
 }
