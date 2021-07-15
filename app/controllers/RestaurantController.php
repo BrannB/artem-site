@@ -5,7 +5,7 @@ namespace app\controllers;
 use app\core\Session;
 use app\core\View;
 
-class MainController
+class RestaurantController
 {
     private Session $session;
     private View $view;
@@ -16,9 +16,11 @@ class MainController
         $this->view = new View();
     }
 
-    public function main()
+    public function list()
     {
-        $this->view->renderContent('main', 'main');
+        $restaurants_list = require_once("../app/core/dbList.php");
+        $this->view->renderContent('restaurant', 'list', [
+            'restaurants' => $restaurants_list
+        ]);
     }
 }
-
